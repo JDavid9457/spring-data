@@ -9,7 +9,9 @@
 
             <h4 class="card-title">
                 <a th:href="@{'/ver/' + ${factura.cliente.id}}" class="btn btn-light btn-xs">&laquo; volver</a>
-                <a th:href="@{'/factura/ver/' + ${factura.id}(format=pdf)}" class="btn btn-danger btn-xs float-right">PDF</a>
+                <a th:href="@{'/factura/ver/' + ${factura.id}(format=pdf)}" class="btn btn-danger btn-xs float-right mx-2">PDF</a>
+				<a th:href="@{'/factura/ver/' + ${factura.id}(format=xlsx)}" class="btn btn-success btn-xs float-right">XLS</a>
+
             </h4>
 
 		<div class="card bg-light">
