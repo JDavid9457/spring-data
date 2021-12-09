@@ -1,5 +1,8 @@
 package com.bolsadeideas.springboot.app.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,9 +40,11 @@ public class Factura implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "create_at")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date fecha;
 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonBackReference
 	private Cliente cliente;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
